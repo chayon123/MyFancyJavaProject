@@ -1,10 +1,30 @@
 import java.util.Scanner;
 
+//singleton pattern
+public class Calculator {
+  private static Calculator instance = null;
+  private Calculator(double number1,double number2) {
+      Double number1;
+      Double number2;
+
+  }
+  public static Calculator getInstance() {
+     if (instance == null) {
+        instance = new Calculator();
+     }
+     return instance;
+   }
+
+}
+
 class Main {
   public static void main(String[] args) {
 
     char operator;
-    Double number1, number2, result;
+    Double number1,number2,result;
+
+    // get instance by singleton pattern
+    Calculator instance = Calculator.getInstance(number1,number2);
 
     // create an object of Scanner class
     Scanner input = new Scanner(System.in);
